@@ -1,4 +1,4 @@
-import { saveFavorite, getFavorites, removeFavorite } from './storage/StorageService.js';
+import { saveFavorite, getFavorites, removeFavorite } from '../storage/StorageService.js';
 
 export function renderResults(results, context = 'search') {
     const container = document.getElementById(
