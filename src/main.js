@@ -1,6 +1,6 @@
 import { searchMedia } from './api/apiService.js';
 import { renderResults, renderModal, setupEventListeners } from './ui/uiRenderer.js';
-import { saveFavorite, getFavorites, removeFavorite } from '/storage/storageService.js';
+import { saveFavorite, getFavorites, removeFavorite } from './storage/StorageService.js';
 
 class App {
     constructor() {
