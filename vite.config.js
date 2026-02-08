@@ -1,13 +1,12 @@
 import { defineConfig } from 'vite';
-import path from 'path';
 
 export default defineConfig({
-  root: 'src',
+  root: '.',  // Change from 'src' to '.'
   build: {
-    outDir: '../dist',
+    outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
-      input: path.resolve(__dirname, 'src/index.html')
+      input: './index.html'  // Change from 'src/index.html'
     }
   },
   server: {
