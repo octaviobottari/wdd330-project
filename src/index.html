@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Domain Media Explorer</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <h1>Public Domain Explorer</h1>
+            </div>
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="#search">Search</a></li>
+                    <li><a href="#favorites">Favorites</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <nav class="nav-mobile" id="mobileNav">
+        <ul>
+            <li><a href="#search">Search</a></li>
+            <li><a href="#favorites">Favorites</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section id="search" class="search-section">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search for images, audio, or texts...">
+                    <button id="searchButton">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
+                <div class="filters">
+                    <label>
+                        <input type="checkbox" name="mediaType" value="image" checked> Images
+                    </label>
+                    <label>
+                        <input type="checkbox" name="mediaType" value="audio" checked> Audio
+                    </label>
+                    <label>
+                        <input type="checkbox" name="mediaType" value="text" checked> Texts
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="sidebar">
+                <h3>Filters</h3>
+                <div class="filter-options">
+                    <div class="filter-group">
+                        <h4>Media Type</h4>
+                        <!-- Same checkboxes as above -->
+                    </div>
+                    <div class="view-toggle">
+                        <button id="gridView" class="active">
+                            <i class="fas fa-th"></i> Grid
+                        </button>
+                        <button id="listView">
+                            <i class="fas fa-list"></i> List
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="results-header">
+                    <h2 id="resultsTitle">Search Results</h2>
+                    <div class="results-info">
+                        <span id="resultsCount">0 results</span>
+                        <select id="sortSelect">
+                            <option value="relevance">Relevance</option>
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="resultsContainer" class="results-container grid-view">
+                    <!-- Results will be dynamically inserted here -->
+                </div>
+
+                <div id="pagination" class="pagination">
+                    <!-- Pagination controls -->
+                </div>
+            </div>
+        </section>
+
+        <section id="favorites" class="favorites-section hidden">
+            <h2>My Favorites</h2>
+            <div id="favoritesContainer" class="favorites-container">
+                <!-- Favorites will be displayed here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Public Domain Media Explorer &copy; 2024</p>
+            <p>Data provided by Wikimedia Commons and Internet Archive</p>
+        </div>
+    </footer>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <button id="closeModal" class="close-btn">&times;</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
